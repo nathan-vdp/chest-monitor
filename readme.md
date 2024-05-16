@@ -18,11 +18,8 @@
    wget run https://github.com/nathan-vdp/chest-monitor/blob/main/install.lua
    ```
 
-2. Run the `install.lua` script to install the chest monitor.
-   ```bash
-   install
-   ```
-
-
+2. Run the `install.lua` script. This script does two things:
+   - It downloads another script named `chest_monitor.lua` from this repository. This is the script that monitors the chest in the game.
+   - It creates a `startup.lua` script. This script ensures that the `chest_monitor.lua` script automatically starts when you boot up the computer.
 
 </div>
