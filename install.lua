@@ -1,32 +1,47 @@
--- Github URL van het script dat geïnstalleerd moet worden
-url = "https://github.com/nathan-vdp/chest-monitor/blob/main/chest_monitor.lua"
+-- Please don't run this script on your own computer. It is meant to be run on a ComputerCraft computer.
+
+local github_url = "https://raw.githubusercontent.com/nathan-vdp/chest-monitor/main/chest_monitor.lua"
+local startup_path = "/startup.lua"
+local chest_monitor_path = "/chest_monitor.lua"
 
 -- Function to download a file from a URL
 local function downloadFile(url, path)
     local response = http.get(url)
-    if response and response.getResponseCode() == 200 then
-        local content = response.readAll()
-        local file = fs.open(path, "w")
-        file.write(content)
-        file.close()
-        print("File " .. path .. " downloaded successfully.")
+    if response then
+        local status = response.getResponseCode()
+        if status == 200 then
+            local content = response.readAll()
+            local file = fs.open(path, "w")
+            if file then
+                file.write(content)
+                file.close()
+                print("File " .. path .. " successfully downloaded.")
+            else
+                print("Could not open file " .. path .. " for writing.")
+            end
+        else
+            print("Failed to download " .. path .. ". HTTP response code: " .. status)
+        end
     else
-        print("Failed to download " .. path)
+        print("Failed to connect to " .. url)
     end
 end
 
--- Controleer de status van de response
-if status == 200 then
-    -- Als de status 200 is, sla de response op als een bestand
-    local file = fs.open("chest_monitor.lua", "w")
-    file.write(response)
-    file.close()
+-- Download chest_monitor.lua from GitHub
+downloadFile(github_url, chest_monitor_path)
 
-    -- Maak een startup.lua bestand dat het chest_monitor.lua script uitvoert
-    local startup = fs.open("startup.lua", "w")
-    startup.write("os.run({}, \"chest_monitor.lua\")")
-    startup.close()
+-- Create startup.lua that runs chest_monitor.lua on startup
+local startup_script = [[
+shell.run("]] .. chest_monitor_path .. [[")
+]]
+local startup_file = fs.open(startup_path, "w")
+if startup_file then
+    startup_file.write(startup_script)
+    startup_file.close()
+    print("startup.lua successfully created.")
 else
-    -- Als de status niet 200 is, print een foutbericht
-    print("HTTP request failed with status: " .. status)
+    print("Could not open " .. startup_path .. " for writing.")
 end
+
+-- Reboot the computer to automatically start the chest monitor
+os.reboot()
