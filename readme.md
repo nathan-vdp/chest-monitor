@@ -13,9 +13,9 @@
 
 <!-- Useage -->
 ## Installation 
-1. Download the `install.lua` file to your in-game computer using the Pastebin `get` command. Replace pastebin_link with the link to the Pastebin.
+1. Download the `install.lua` file to your in-game computer using the Pastebin `get` command.
    ```bash
-   wget run https://github.com/nathan-vdp/chest-monitor
+   wget run https://github.com/nathan-vdp/chest-monitor/blob/main/install.lua
    ```
    
 2. Run the `install.lua` script to install the chest monitor.
