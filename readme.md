@@ -1,19 +1,24 @@
-# Chest Monitor
+<div>
+<div align="center">
+  <h1>Chest Monitor</h1>
+</div>
+<!-- Badges -->
+<p align="center">
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/nathan-vdp/chest-monitor" alt="last update" />
+  </a>
+</p>
 
-👋 Welcome to Chest Monitor! This is a simple yet powerful tool that helps you monitor the status of a chest in your game.
+  <p>
+    A simple yet powerful tool that helps you monitor the status of a chest in your game!
+  </p>
 
-## 🚀 How to Install
 
-1. ▶ Download the `install.lua` script from this repository. This is a special script that handles the installation for you.
-2. ▶ Run the `install.lua` script. This script does two things:
-   - It downloads another script named `chest_monitor.lua` from this repository. This is the script that monitors the chest in the game.
-   
-   - It creates a `startup.lua` script. This script ensures that the `chest_monitor.lua` script automatically starts when you boot up the computer.
+<!-- Table of Contents -->
+<h2 align="center"> Table of Contents </h2>
 
-## 🎯 How to Use
 
-After installation, the chest monitor will automatically start when you boot up the computer. If you want to start it manually, you can run the `chest_monitor.lua` script.
+* [Tech Stack](tech-stack)
+* [Usage](Usage)
 
-## 🤝 How You Can Help
-
-If you want to help make this project better, we're always happy to receive contributions. You can help us by reporting issues or by suggesting new features. We greatly appreciate your help!
+</div>

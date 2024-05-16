@@ -32,7 +32,7 @@ downloadFile(github_url, chest_monitor_path)
 
 -- Create startup.lua that runs chest_monitor.lua on startup
 local startup_script = [[
-shell.run("]] .. chest_monitor_path .. [[")
+dofile("]] .. chest_monitor_path .. [[")
 ]]
 local startup_file = fs.open(startup_path, "w")
 if startup_file then
