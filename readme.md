@@ -20,6 +20,14 @@
 
 2. Run the `install.lua` script. This script does two things:
    - It downloads another script named `chest_monitor.lua` from this repository. This is the script that monitors the chest in the game.
+
    - It creates a `startup.lua` script. This script ensures that the `chest_monitor.lua` script automatically starts when you boot up the computer.
+
+## Usage
+
+After installation, the chest monitor will automatically start when you boot up the computer. If you want to start it manually, you can run the `chest_monitor.lua` script.
+
+## Contributing
+<p>Contributions to this project are welcomed. Feel free to submit a Pull Request or open an issue if you have any ideas or encounter any problems.</p>
 
 </div>
