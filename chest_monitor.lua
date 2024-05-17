@@ -44,16 +44,20 @@ end
 -- De while loop om elke 10 seconden de monitor te updaten
 -- *Haal de comment bij de while loop weg als je in-game test*
 
--- while true do
---     local monitor = peripheral.find("monitor")
---     local chest = peripheral.find("chest")
+while true do
+    local monitor = peripheral.find("monitor")
+    local chest = peripheral.find("chest")
 
---     print_inventory_on_monitor(chest, monitor)
+    if monitor and chest then
+        print_inventory_on_monitor(chest, monitor)
+    else
+        if not monitor then
+            print("Monitor not found")
+        end
+        if not chest then
+            print("Chest not found")
+        end
+    end
 
---     sleep(10)
--- end
-
-local monitor = peripheral.find("monitor")
-local chest = peripheral.find("chest")
-
-print_inventory_on_monitor(chest, monitor)
+    sleep(10)
+end
