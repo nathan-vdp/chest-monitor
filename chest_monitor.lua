@@ -42,7 +42,6 @@ end
 
 
 -- De while loop om elke 10 seconden de monitor te updaten
--- *Haal de comment bij de while loop weg als je in-game test*
 
 while true do
     local monitor = peripheral.find("monitor")
