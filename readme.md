@@ -13,10 +13,9 @@
 
 <!-- Useage -->
 ## Installation
-1. Download the `install.lua` file to your in-game computer using the Pastebin `get` command.
+1. Download the `install.lua` file to your in-game computer using the `wget` command. Please note that the URL should be the raw version of the file on GitHub.
    ```bash
-   wget run https://github.com/nathan-vdp/chest-monitor/blob/main/install.lua
-   ```
+   wget https://raw.githubusercontent.com/nathan-vdp/chest-monitor/main/install.lua
 
 2. Run the `install.lua` script.
 ```bash
