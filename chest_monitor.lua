@@ -25,6 +25,7 @@ function print_counts(chest, monitor)
     for i, item in pairs(items) do
         local count = item.count .. "x"
         local x = math.max((monitorWidth - #count) / 2, 0)
+        local name = string.gsub(count.name, "minecraft:", "")
         monitor.setCursorPos(x, y)
         monitor.setTextColor(colors.lightGray)
         monitor.write(count)
